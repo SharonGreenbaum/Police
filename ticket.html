@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police</title>
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+  
+</head>
+<body>
+    <header>
+        <img style="height: 100%; width: 100%;" src="https://www.police.gov.il/join/Images/222920032908ee46a83.jpg" alt="police">
+    </header>
+
+    <nav>
+        <p style=" text-align: center; font-weight: 1000; font-size:xx-large ;">Israel Police</p>
+    </nav>
+
+    <main>
+  
+    <form id="ticket" action="/Police/sendticket.php" methos="post" >
+        <fieldset>
+            <legend>Write your ticket here</legend>
+              <p>Place: <br><input class="txt input" type="text" id ="place" placeholder="Enter your place"></p>
+              <p>Description: <br> <textarea id="desc" placeholder="Enter description"></textarea>
+                <p><input type="submit" name="Submit" id="Submit" value="send ticket"></p>
+        </fieldset>        
+    </form>
+
+ 
+    </main>
+</body>
+</html>
