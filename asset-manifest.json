@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Police/static/css/main.073c9b0a.css",
+    "main.js": "/Police/static/js/main.b60fe2e6.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Police/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/Police/index.html",
+    "main.073c9b0a.css.map": "/Police/static/css/main.073c9b0a.css.map",
+    "main.b60fe2e6.js.map": "/Police/static/js/main.b60fe2e6.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Police/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b60fe2e6.js"
+  ]
+}
