@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+
+</head>
+                  <?php
+  include('navbar.php');
+  ?>
+<body>
+    <header>
+        <img style="height: 100%; width: 100%;" src="https://www.police.gov.il/join/Images/222920032908ee46a83.jpg" alt="police">
+
+    </header>
+    <nav>
+        <p style=" text-align: center; font-weight: 1000; font-size:xx-large ;">Israel Police</p>
+
+    </nav>
+    <?php
+// Importing DBConfig.php file.
+include '../DBconfig.php';
+
+// Creating connection.
+ $conn = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
+  if(isset($_POST['submit'])){
+echo 'ffvb';
+$NumberCar = $_POST['car'];
+
+
+$sql = "select Color, Model , Year, Status from Cars where Number = '$NumberCar'  ";
+
+$result = $conn->query($sql);
+
+$flag= 0;
+ 
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+ $flag= 1;
+  }
+}
+
+header('Location: /Police/PHP/CarPHP.php?flag='.$flag.'&NumberCar='.$NumberCar);
+
+
+}
+$conn->close();
+
+
+ ?>
+
+    <main>
+        <br>
+        <br>
+        <form id="form1"  method= "post" >
+            <div style="border: black solid;">
+                <p style="font-weight: bold; font-size:1000;">Car number:</p>
+                <p>Enter car number: <input type="text" required name="car"></p>
+                <br>
+                <input type="submit" value="Search" name="submit">
+                
+            </div>
+
+        </form>
+        
+
+
+    </main>
+</body>
+</html>
