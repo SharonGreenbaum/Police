@@ -1,3 +1,4 @@
+
 console.log('== START ==');
 
 var licensePlateAPI = 'https://license-plate-detection.p.rapidapi.com/license-plate-detection';
@@ -33,7 +34,10 @@ function sleep(ms) {
 const myPlates = [
 	"https://i.ibb.co/NK3sjHw/car1.jpg",
 	"https://i.ibb.co/MGKNQDt/car1.jpg",
-	"https://i.ibb.co/NK3sjHw/car3.jpg"
+	"https://i.ibb.co/7pvrpXG/2L.jpg", //normal car
+	"https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/giulianumberplate.jpg?itok=hilNGtJ-",
+	"https://i.ibb.co/DzkGZL1/430p-4500-1200.jpg"
+
 ]
 
 async function checkAll() {
@@ -56,7 +60,7 @@ async function checkAll() {
     			.then(data => data.json())
     			.then(data => {
     			    bootbox.confirm({
-    			        message: 'The status of the car is: ' + data.status+ ' and the model is: ' + data.model + ' what do you want to do?',
+    			        message: 'The status of the car is: ' + data.status+ '<br> Description: ' + data.details + ' <br>The model is: ' + data.model + ', ' + data.submodel + '  <br>What do you want to do?',
                 		buttons:{
                     		confirm: {
                                 label: 'Send to the owner a message',
@@ -83,7 +87,7 @@ async function checkAll() {
 			})
 			.catch(err => console.error(err))
 
-	 await sleep(12000);
+	 await sleep(18000);
 	}
 }
 
@@ -95,3 +99,6 @@ checkAll();
 
 
    
+
+
+
